@@ -52,7 +52,7 @@ const Home = () => {
           <br />
           place with ease
         </h1>
-        <div className='text-gray-400 text-xs sm:text-sm'>
+        <div className='text-gray-700 text-xs font-semibold sm:text-sm'>
           Sahand Estate is the best place to find your next perfect place to
           live.
           <br />
@@ -60,7 +60,7 @@ const Home = () => {
         </div>
         <Link
           to={'/search'}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
+          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline '
         >
           Let's get started...
         </Link>
