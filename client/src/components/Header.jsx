@@ -11,16 +11,17 @@ const Header = () => {
     e.preventDefault();
     const urlParams = new URLSearchParams(window.location.search);
     urlParams.set('searchTerm', searchTerm);
+    setSearchTerm('');
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
   };
   useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
+    const urlParams = new URLSearchParams(window.location.search);
     const searchTermFromUrl = urlParams.get('searchTerm');
     if (searchTermFromUrl) {
       setSearchTerm(searchTermFromUrl);
     }
-  }, [location.search]);
+  }, [window.location.search]);
   return (
     <header className="bg-slate-200 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
@@ -30,7 +31,7 @@ const Header = () => {
             <span className="text-slate-700">Estate</span>
           </h1>
         </Link>
-        <form onSubmit={handleSubmit} className="bg-slate-100 p-3 rounded-lg flex items-center">
+        <form onSubmit={handleSubmit}  className="bg-slate-100 p-3 rounded-lg flex items-center">
           <input
             type="text"
             placeholder="Search ..."
